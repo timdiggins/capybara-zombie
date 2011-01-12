@@ -84,6 +84,19 @@ if(tagName == "TEXTAREA") {
       browser_wait :fire, "click".inspect, native_ref
     end
 
+    def drag_to(element)
+      # https://github.com/smparkes/capybara-envjs/blob/master/lib/capybara/driver/envjs_driver.rb
+      # distance stuff is arbitrary at this point, to make jquery.ui happy ...
+      browser_wait :fire, "mousedown".inspect,    self.native_ref, encode({:button => 1, :pageX => 0, :pageY => 0})
+      browser_wait :fire, "mousemove".inspect, element.native_ref, encode({:button => 1, :pageX => 1, :pageY => 1})
+      browser_wait :fire, "mousemove".inspect, element.native_ref, encode({:button => 1, :pageX => 0, :pageY => 0})
+      browser_wait :fire,   "mouseup".inspect, element.native_ref, encode({:button => 1, :pageX => 0, :pageY => 0})
+    end
+
+    def native_ref
+      "pointers[#{@native}]"
+    end
+
     private
 
     def select_node
@@ -94,9 +107,6 @@ if(tagName == "TEXTAREA") {
       socket_json "#{native_ref}#{call}"
     end
 
-    def native_ref
-      "pointers[#{@native}]"
-    end
   end
 
   class Headers

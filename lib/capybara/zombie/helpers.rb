@@ -25,6 +25,7 @@ module Capybara
       # Send something to the socket, but do not care about return value.
       def socket_write(js)
         socket_send("#{js}\nstream.end();")
+        nil
       end
 
       # Send something to the socket which is automatically converted from/to JSON.

@@ -163,11 +163,11 @@ if(tagName == "TEXTAREA") {
   end
 
   def evaluate_script(script)
-    socket_json "browser.evaluate(#{script})"
+    socket_json(_evaluate_script_command(script))
   end
-  
+
   def execute_script(script)
-    evaluate_script(script); nil
+    socket_write(_evaluate_script_command(script))
   end
 
   def find(selector, context=nil)
@@ -193,6 +193,10 @@ stream.end(JSON.stringify(sets));
 
   def url(path)
     rack_server.url(path)
+  end
+
+  def _evaluate_script_command(script)
+    "browser.evaluate(#{encode(script)})"
   end
 end
 

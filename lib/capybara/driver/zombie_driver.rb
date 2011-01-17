@@ -165,6 +165,10 @@ if(tagName == "TEXTAREA") {
   def evaluate_script(script)
     socket_json "browser.evaluate(#{script})"
   end
+  
+  def execute_script(script)
+    evaluate_script(script); nil
+  end
 
   def find(selector, context=nil)
     args = [encode(selector), context].compact.join(",")

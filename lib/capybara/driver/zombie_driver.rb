@@ -99,6 +99,10 @@ if(tagName == "TEXTAREA") {
       "pointers[#{@native}]"
     end
 
+    def trigger(event)
+      fire(event.to_s, self)
+    end
+
     private
 
     def select_node

@@ -157,9 +157,8 @@ if(tagName == "TEXTAREA") {
     socket_json "browser.html()"
   end
 
-  # TODO Is this really correct?
   def source
-    socket_json "browser.document.outerHTML"
+    socket_json "browser.source"
   end
 
   def current_url

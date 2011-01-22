@@ -85,14 +85,12 @@ if(tagName == "TEXTAREA") {
     end
 
     def drag_to(element)
-      # c.f. https://github.com/smparkes/capybara-envjs/blob/master/lib/capybara/driver/envjs_driver.rb
       # jQuery checks that (which == 1) to determine that the left button is pressed
-      # jQuery uses $.ui.intersect now to test for intersection
-      # !todo: drag_to won't work until intersect is satisfied
+      # jQuery uses $.ui.intersect to test for intersection
       fire "mousedown",    self, {}, {:button => 0, :which => 1, :pageX => 0, :pageY => 0}
       fire "mousemove", element, {}, {:button => 0, :which => 1, :pageX => 1, :pageY => 1}
-      fire "mousemove", element, {}, {:button => 0, :which => 1, :pageX => 10, :pageY => 136}
-      fire   "mouseup", element, {}, {:button => 0, :which => 1, :pageX => 10, :pageY => 136}
+      fire "mousemove", element, {}, {:button => 0, :which => 1, :pageX => 1, :pageY => 1}
+      fire   "mouseup", element, {}, {:button => 0, :which => 1, :pageX => 1, :pageY => 1}
     end
 
     def native_ref

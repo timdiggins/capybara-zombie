@@ -9,9 +9,13 @@ class Capybara::Driver::Zombie < Capybara::Driver::Base
     def visible?
       find("./ancestor-or-self::*[contains(@style, 'display:none') or contains(@style, 'display: none')]").empty?
     end
-    
+
     def checked?
       native_json(".checked")
+    end
+
+    def selected?
+      native_json(".selected")
     end
 
     def [](name)

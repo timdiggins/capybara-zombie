@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency("capybara", "~> 0.4.1")
   s.add_runtime_dependency("multi_json", "~> 0.0.5")
+  s.add_runtime_dependency("childprocess", "~> 0.1.7")
 
   s.add_development_dependency("bundler", "~> 1.0")
   s.add_development_dependency("rspec", "~> 2.0")

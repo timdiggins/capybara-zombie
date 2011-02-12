@@ -3,12 +3,13 @@ PATH
   specs:
     capybara-zombie (0.0.1)
       capybara (~> 0.4.1)
+      childprocess (~> 0.1.7)
       multi_json (~> 0.0.5)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    capybara (0.4.1.1)
+    capybara (0.4.1.2)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
       mime-types (>= 1.16)
@@ -18,14 +19,14 @@ GEM
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.3)
     celerity (0.8.7)
-    childprocess (0.1.6)
+    childprocess (0.1.7)
       ffi (~> 0.6.3)
     columnize (0.3.2)
     culerity (0.2.15)
     diff-lcs (1.1.2)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    json_pure (1.4.6)
+    json_pure (1.5.1)
     linecache (0.43)
     mime-types (1.16)
     multi_json (0.0.5)
@@ -34,14 +35,14 @@ GEM
     rack-test (0.5.7)
       rack (>= 1.0)
     rake (0.8.7)
-    rspec (2.3.0)
-      rspec-core (~> 2.3.0)
-      rspec-expectations (~> 2.3.0)
-      rspec-mocks (~> 2.3.0)
-    rspec-core (2.3.1)
-    rspec-expectations (2.3.0)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.1)
+    rspec-expectations (2.5.0)
       diff-lcs (~> 1.1.2)
-    rspec-mocks (2.3.0)
+    rspec-mocks (2.5.0)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.4.0)
@@ -53,13 +54,13 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
-    sinatra (1.1.0)
+    sinatra (1.1.2)
       rack (~> 1.1)
-      tilt (~> 1.1)
-    tilt (1.1)
+      tilt (~> 1.2)
+    tilt (1.2.2)
     xpath (0.1.3)
       nokogiri (~> 1.3)
-    yajl-ruby (0.7.8)
+    yajl-ruby (0.7.9)
 
 PLATFORMS
   ruby
@@ -68,6 +69,7 @@ DEPENDENCIES
   bundler (~> 1.0)
   capybara (~> 0.4.1)
   capybara-zombie!
+  childprocess (~> 0.1.7)
   multi_json (~> 0.0.5)
   rspec (~> 2.0)
   ruby-debug

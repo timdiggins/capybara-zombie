@@ -166,7 +166,7 @@ if(tagName == "TEXTAREA") {
   end
 
   def status_code
-    socket_json "browser.lastResponse.status"
+    socket_json "browser.statusCode"
   end
 
   def body

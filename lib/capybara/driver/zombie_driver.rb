@@ -154,7 +154,7 @@ if(tagName == "TEXTAREA") {
     @rack_server.boot if Capybara.run_server
     
     self.class.zombie.animate!
-    at_exit do; self.class.zombie.kill; end
+    at_exit { self.class.zombie.kill }
   end
 
   def visit(path)

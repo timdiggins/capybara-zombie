@@ -205,7 +205,7 @@ stream.end(JSON.stringify(sets));
   end
 
   def reset!
-    socket_write("browser.cookies(browser.window.location.hostname, '/').clear();")
+    socket_write("browser.cookies(browser.window.location.hostname, '/').clear(); browser = null;")
   end
 
   private

@@ -2,8 +2,13 @@ require File.expand_path('../spec_helper', File.dirname(__FILE__))
 
 describe Capybara::Driver::Zombie do
   driver = nil
+
   before do
     @driver = (driver ||= Capybara::Driver::Zombie.new(TestApp))
+  end
+
+  after do
+    @driver.reset!
   end
 
   it_should_behave_like "driver"

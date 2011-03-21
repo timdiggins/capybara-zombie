@@ -7,6 +7,10 @@ describe Capybara::Driver::Zombie do
     @session = (session ||= Capybara::Session.new(:zombie, TestApp))
   end
 
+  after do
+    @session.driver.reset!
+  end
+
   describe '#driver' do
     it "should be an zombie driver" do
       @session.driver.should be_an_instance_of(Capybara::Driver::Zombie)

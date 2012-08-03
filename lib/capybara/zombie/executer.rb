@@ -15,7 +15,6 @@ module Capybara
           self.process.io.stdout = stdout_writer
 
           self.process.environment['NODE_PATH'] = Rails.root.join('node_modules')
-          puts self.process.environment
 
           self.process.start
           sleep 0.5

@@ -14,6 +14,8 @@ module Capybara
           self.process.io.stderr = stderr_writer
           self.process.io.stdout = stdout_writer
 
+          self.process.cwd = Rails.root
+
           self.process.start
           sleep 0.5
 
